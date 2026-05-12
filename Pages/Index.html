@@ -9,86 +9,100 @@
 
 <div class="container">
 
-
-  <aside class="sidebar">
-    <ul>
-      <li class="red">Nova Tarefa</li>
-      <li class="green">Minhas Tarefas</li>
-      <li class="yellow">Orçamento final</li>
-    </ul>
+  <!-- MENU -->
+  <aside class="menu">
+    <p class="red">■ Nova Tarefa</p>
+    <p class="green">■ Minhas Tarefas</p>
+    <p class="yellow">■ Orçamento final</p>
   </aside>
 
- 
-  <main class="main">
+  <!-- CONTEÚDO -->
+  <main class="conteudo">
 
-    <h1>Gestão de Orçamento - <span>Projeto</span></h1>
+    <h2>Gestão de Orçamento - <span>Projeto</span></h2>
 
-    <button class="btn-top">Adicionar nova tarefa</button>
-
-    <h3>Nova tarefa</h3>
+    <button class="btn">Adicionar nova tarefa</button>
 
     <div class="form">
 
-      <div class="row">
-        <div>
-          <label>Descrição</label>
-          <input type="text" value="desenvolvimento das paginas internas">
-        </div>
+      <label>Nova tarefa</label>
+      <input type="text" placeholder="desenvolvimento das paginas internas">
 
+      <div class="linha">
         <div>
-          <label>Descrição</label>
-          <input type="text" value="pesquisar">
+          <label>Desenvolvimento de Tarefa</label>
+          <input type="text" placeholder="pesquisar">
         </div>
       </div>
 
       <label>Descrição</label>
-      <input type="text" class="full">
+      <textarea></textarea>
 
-      <div class="row">
+      <div class="linha">
         <div>
           <label>Horas estimadas</label>
-          <input type="text" value="42 horas">
+          <input type="text" id="horas" value="42 horas">
         </div>
 
         <div>
           <label>Custo por hora</label>
-          <input type="text" value="R$180,00">
+          <input type="text" id="valor" value="180">
+        </div>
+
+        <div>
+          <button id="btnOpcoes">opções de cálculo</button>
         </div>
       </div>
 
-      <div class="row">
+      <div class="linha">
         <div>
-          <label>Data de inicio</label>
-          <input type="text" value="5/05/2026">
+          <label>Data de início</label>
+          <input type="date">
         </div>
 
         <div>
           <label>Data de termino</label>
-          <input type="text" value="20/05/2026">
+          <input type="date">
         </div>
 
-        <button class="btn">Adicionar tarefa</button>
+        <div>
+          <button class="btn">Adicionar tarefa</button>
+        </div>
       </div>
 
     </div>
 
   </main>
 
-
-  <aside class="summary">
+  <!-- RESUMO -->
+  <aside class="resumo">
     <h3>Resumo do projeto</h3>
-
-    <p>Total de Tarefas:</p>
-    <span>8</span>
-
-    <p>Total de horas:</p>
-    <span>184 horas</span>
-
-    <p>Custo Total Estimado:</p>
-    <span class="price">R$28.740,00</span>
+    <p>Total de Tarefas<br><strong>8</strong></p>
+    <p>Total de horas:<br><strong id="totalHoras">184 horas</strong></p>
+    <p>Custo Total Estimado:<br><strong id="total">R$ 0,00</strong></p>
   </aside>
 
 </div>
-    <script src="../Scripts/scripts.js"></script>
+
+<!-- PAINEL LATERAL -->
+<div class="painel" id="painel">
+
+  <div class="box desconto">
+    <h4>Desconto</h4>
+    <input type="number" id="desconto" value="10"> %
+  </div>
+
+  <div class="box urgencia">
+    <h4>Urgência</h4>
+
+    <label><input type="radio" name="urgencia" value="0" checked> Sem urgência</label>
+    <label><input type="radio" name="urgencia" value="20"> +20%</label>
+    <label><input type="radio" name="urgencia" value="50"> +50%</label>
+
+  </div>
+
+</div>
+
+<script src="/Scripts/scripts.js"></script>
 </body>
 </html>
